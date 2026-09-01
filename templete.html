@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>SecureFile</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🔐 SecureFile</h1>
+
+    <div class="card">
+
+        <h2>Encrypt File</h2>
+
+        <form
+            action="/encrypt"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <input
+                type="file"
+                name="file"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter encryption password"
+                required
+            >
+
+            <button type="submit">
+                Encrypt & Download
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Decrypt File</h2>
+
+        <form
+            action="/decrypt"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <input
+                type="file"
+                name="file"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter decryption password"
+                required
+            >
+
+            <button type="submit">
+                Decrypt & Download
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
